@@ -622,8 +622,8 @@ h2 {
   position: absolute;
   width: 80px;
   height: 80px;
-  border-radius:50%;
-  opacity: .85;
+  border-radius: 50%;
+  opacity: 0.85;
 }
 
 .cta-shape--left {
@@ -741,8 +741,14 @@ h2 {
     padding: 24px 0 38px;
   }
 
+  .hero-stats {
+    column-gap: 10px;
+  }
+
   .reason-section {
     width: min(100% - 40px, 560px);
+    margin-right: auto;
+    margin-left: auto;
     padding: 24px 0 60px;
     display: flex;
     flex-direction: column;
@@ -752,7 +758,7 @@ h2 {
 
   .reason-gallery img {
     max-width: 500px;
-    margin: 100px;
+    margin: 0 auto;
   }
 
   .reason-copy {
@@ -760,17 +766,20 @@ h2 {
   }
 
   .benefit-list {
+    width: auto;
     margin: 34px 0 30px;
   }
 
   .my-journey-section {
     width: min(100% - 40px, 560px);
     min-height: 0;
+    margin-right: auto;
     padding: 42px 20px;
     border-radius: 28px;
   }
 
   .journey-stats {
+    width: 100%;
     gap: 28px 10px;
     padding: 24px 0 29px;
   }
@@ -894,6 +903,72 @@ h2 {
 
   .desktop-break {
     display: none;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1100px) {
+  .navbar,
+  .hero,
+  .reason-section,
+  .my-journey-section,
+  .showcase-section,
+  .services-section,
+  .faq-section,
+  .cta-section,
+  .site-footer {
+    width: min(100% - 64px, 960px);
+  }
+
+  .hero {
+    min-height: 470px;
+  }
+
+  .hero-stats {
+    column-gap: 40px;
+  }
+
+  .reason-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .reason-gallery img {
+    max-width: 100%;
+  }
+
+  .benefit-list {
+    width: auto;
+  }
+
+  .my-journey-section {
+    margin-right: auto;
+  }
+
+  .journey-stats {
+    width: 100%;
+  }
+
+  .showcase-copy {
+    padding: 28px;
+  }
+
+  .showcase-copy h3 {
+    font-size: 30px;
+  }
+
+  .showcase-role {
+    font-size: 14px;
+  }
+
+  .showcase-copy > p:last-child {
+    font-size: 14px;
+  }
+
+  .faq-section {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 42px;
   }
 }
 
