@@ -2019,3 +2019,150 @@ h2 {
     font-size: 43px;
   }
 }
+
+@media (max-width: 720px) {
+  .case-study-page {
+    font-size: 16px;
+  }
+
+  .case-study-page .case-study-intro h1 {
+    font-size: clamp(26px, 7.2vw, 32px);
+  }
+
+  .case-study-page .case-study-intro p,
+  .case-study-page .live-preview {
+    font-size: 14px;
+  }
+
+  .case-study-page .project-overview h2,
+  .case-study-page .teamwork-credit h2,
+  .case-study-page .research-intro h2,
+  .case-study-page .frustration-copy h2 {
+    font-size: 22px;
+  }
+
+  .case-study-page .project-overview > p,
+  .case-study-page .research-intro p,
+  .case-study-page .flowcore-copy p,
+  .case-study-page .usability-copy > p:last-child {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .case-study-page .teamwork-credit {
+    height: auto;
+    min-height: 250px;
+    padding: 28px 20px 24px;
+  }
+
+  .case-study-page .team-list {
+    gap: 12px;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 24px;
+    padding-bottom: 0;
+  }
+
+  .case-study-page .team-member {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .case-study-page .team-member .avatar {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .case-study-page .team-member strong {
+    font-size: 11px;
+  }
+
+  .case-study-page .team-member small {
+    overflow: hidden;
+    font-size: 8px;
+    text-overflow: ellipsis;
+  }
+
+  .case-study-page .frustrations {
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .case-study-page .research-diagram {
+    width: 132px;
+    height: 132px;
+  }
+
+  .case-study-page .frustration-list {
+    gap: 10px;
+  }
+
+  .case-study-page .frustration-list li {
+    grid-template-columns: 10px minmax(0, 1fr);
+    gap: 6px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .case-study-page .frustration-list strong {
+    font-size: 13px;
+  }
+
+  .case-study-page .legend {
+    width: 10px;
+    height: 10px;
+  }
+
+  .case-study-page .pain-points-section h2,
+  .case-study-page .flowcore-copy h2,
+  .case-study-page .usability-label {
+    font-size: 18px;
+  }
+
+  .case-study-page .pain-point-card p {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .case-study-page .pain-point-person strong {
+    font-size: 15px;
+  }
+
+  .case-study-page .pain-point-person small,
+  .case-study-page .usability-stat small {
+    font-size: 10px;
+  }
+
+  .case-study-page .usability-copy h2 {
+    font-size: 25px;
+  }
+
+  .case-study-page .usability-stat span {
+    font-size: 11px;
+  }
+
+  .case-study-page .usability-stat strong {
+    font-size: 17px;
+  }
+
+  .case-study-page .scenario-label,
+  .case-study-page .matrix-copy > p {
+    font-size: 13px;
+  }
+
+  .case-study-page .scenario-intro h2,
+  .case-study-page .matrix-copy h2 {
+    font-size: 29px;
+  }
+
+  .case-study-page .scenario-intro li {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .case-study-page .matrix-copy > span {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
