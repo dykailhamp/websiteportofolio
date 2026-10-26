@@ -1522,85 +1522,91 @@ h2 {
   }
 
   .case-study-page .navbar {
-    width: calc(100% - 72px);
-    height: 56px;
+    width: calc(100% - 40px);
+    height: 70px;
   }
 
   .case-study-page .logo {
-    width: 52px;
+    width: 88px;
   }
 
   .case-study-page .nav-toggle {
-    display: none;
+    display: flex;
   }
 
   .case-study-page .nav-links {
-    position: static;
-    display: flex;
-    width: auto;
-    padding: 0;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
+    position: absolute;
+    top: 62px;
+    right: 0;
+    display: none;
+    width: 170px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(10, 6, 20, 0.12);
   }
 
   .case-study-page .nav-links a {
-    font-size: 7px;
+    font-size: 14px;
   }
 
-  .case-study-page .nav-links a.active::after {
-    bottom: -5px;
-    height: 1px;
+  .case-study-page .nav-links.is-open {
+    display: flex;
   }
 
   .case-study-intro {
-    width: min(100% - 72px, 560px);
-    min-height: 94px;
+    width: calc(100% - 40px);
+    min-height: 0;
+    margin-top: 36px;
+    margin-bottom: 28px;
+    flex-direction: column;
+    gap: 18px;
     align-items: flex-start;
-    padding: 24px 0 16px;
+    padding: 0;
   }
 
   .case-study-intro h1 {
-    font-size: 16px;
+    font-size: 28px;
     line-height: 1.1;
-    letter-spacing: -0.8px;
+    letter-spacing: -1px;
   }
 
   .case-study-intro p {
-    margin-top: 8px;
-    font-size: 8px;
+    margin-top: 10px;
+    font-size: 12px;
     line-height: 1.2;
   }
 
   .live-preview {
-    padding-top: 3px;
-    font-size: 10px;
+    padding-top: 0;
+    font-size: 14px;
   }
 
   .live-preview span {
-    font-size: 13px;
+    font-size: 17px;
   }
 
   .case-study-cover {
-    height: 258px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     min-height: 0;
   }
 
   .project-overview {
-    width: min(100% - 72px, 560px);
-    padding: 52px 0 30px;
+    width: calc(100% - 40px);
+    padding: 42px 0 36px;
   }
 
   .project-overview h2 {
-    font-size: 15px;
+    font-size: 22px;
     margin-bottom: 10px;
   }
 
   .project-overview > p {
-    font-size: 9px;
+    font-size: 15px;
     line-height: 1.25;
   }
 
@@ -1615,8 +1621,10 @@ h2 {
   }
 
   .research-section {
-    width: min(100% - 96px, 1080px);
+    width: calc(100% - 40px);
     height: auto;
+    min-height: 0;
+    padding-top: 36px;
     padding-bottom: 20px;
   }
 
@@ -1629,13 +1637,13 @@ h2 {
   }
 
   .research-label {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .teamwork-credit h2,
   .research-intro h2,
   .frustration-copy h2 {
-    font-size: 16px;
+    font-size: 22px;
   }
 
   .team-list {
@@ -1686,12 +1694,12 @@ h2 {
 
   .research-intro p {
     margin-top: 7px;
-    font-size: 7px;
+    font-size: 12px;
   }
 
   .frustrations {
     height: auto;
-    grid-template-columns: 145px 1fr;
+    grid-template-columns: 120px minmax(0, 1fr);
     gap: 12px;
     margin-bottom: 34px;
   }
@@ -1702,7 +1710,7 @@ h2 {
   }
 
   .pain-points-section {
-    width: min(100% - 72px, 560px);
+    width: calc(100% - 40px);
     max-width: none;
     margin: 20px auto 60px;
   }
@@ -1714,14 +1722,15 @@ h2 {
 
   .pain-points-slider {
     gap: 16px;
-    margin-right: -36px;
+    margin-right: 0;
     padding-bottom: 5px;
   }
 
   .pain-point-card {
-    width: 330px;
-    min-width: 330px;
-    height: 210px;
+    width: min(82vw, 330px);
+    min-width: min(82vw, 330px);
+    height: auto;
+    min-height: 210px;
     padding: 22px 20px 18px;
     gap: 18px;
     border-radius: 18px;
@@ -1747,10 +1756,10 @@ h2 {
   }
 
   .flowcore-section {
-    width: min(100% - 72px, 560px);
+    width: calc(100% - 40px);
     max-width: none;
     margin-bottom: 60px;
-    padding-top: 28px;
+    padding: 28px 20px 36px;
   }
 
   .flowcore-copy h2 {
@@ -1766,7 +1775,7 @@ h2 {
   }
 
   .usability-section {
-    width: min(100% - 72px, 560px);
+    width: calc(100% - 40px);
     max-width: none;
     margin-bottom: 60px;
     padding: 48px 20px 52px;
@@ -1817,7 +1826,7 @@ h2 {
   }
 
   .scenario-section {
-    width: min(100% - 72px, 560px);
+    width: calc(100% - 40px);
     max-width: none;
     margin-bottom: 60px;
   }
@@ -1840,11 +1849,11 @@ h2 {
 
   .scenario-intro h2,
   .matrix-copy h2 {
-    font-size: 22px;
+    font-size: 28px;
   }
 
   .scenario-intro li {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .task-matrix {
@@ -1878,12 +1887,12 @@ h2 {
   .frustration-list li {
     grid-template-columns: 8px 1fr;
     gap: 4px;
-    font-size: 5px;
+    font-size: 10px;
   }
 
   .frustration-list strong {
     margin-bottom: 1px;
-    font-size: 7px;
+    font-size: 12px;
   }
 
   .legend {
