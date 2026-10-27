@@ -39,6 +39,7 @@
         <div>
           <h1>GenproApps : Aplikasi<br />Pencegahan Stunting</h1>
           <p>UI/UX Designer · UX Researcher</p>
+          <p class="case-study-method">Method: Design Thinking</p>
         </div>
         <a class="live-preview" href="#overview">Live Preview <span aria-hidden="true">↗</span></a>
       </section>
@@ -111,8 +112,9 @@
 
       <section class="pain-points-section" aria-label="Pain points">
         <h2>Pain Points</h2>
-        <div class="pain-points-slider">
-          <article class="pain-point-card">
+        <div class="pain-points-carousel">
+          <div class="pain-points-slider">
+            <article class="pain-point-card">
             <p>
               Pernah sih, waktu sinyal internet lagi jelek, ada beberapa konten
               yang lama kebuka. Tapi info dasarnya tetap bisa dilihat, jadi nggak
@@ -122,8 +124,8 @@
               <img src="Assets/kiki.svg" alt="" />
               <span><strong>Kiki Amarlis</strong><small>Mother of 2 children</small></span>
             </div>
-          </article>
-          <article class="pain-point-card">
+            </article>
+            <article class="pain-point-card">
             <p>
               Kendala yang dihadapi ketika koneksi internet terbatas kan kurang
               mendukung, untuk hp yang jadul mungkin tidak bisa akses karena kan
@@ -133,8 +135,8 @@
               <img src="Assets/fitri.svg" alt="" />
               <span><strong>Fitri Amaliyah</strong><small>Mother of 2 children</small></span>
             </div>
-          </article>
-          <article class="pain-point-card">
+            </article>
+            <article class="pain-point-card">
             <p>
               Fitur yang diperlukan ini adalah fitur konsultasi dokter. Fitur ini
               sangat membantu jika dari kita kesehatan yang ada bisa konsultasi
@@ -144,8 +146,8 @@
               <img src="Assets/fikri.svg" alt="" />
               <span><strong>Fikri Aljauzi</strong><small>Nursing Student</small></span>
             </div>
-          </article>
-          <article class="pain-point-card">
+            </article>
+            <article class="pain-point-card">
             <p>
               Berdasarkan pengalaman saya menggunakan aplikasi ini Tidak cukup
               baik karna aplikasi ini tidak menyediakan informasi mengenai pola
@@ -155,7 +157,12 @@
               <img src="Assets/desy.svg" alt="" />
               <span><strong>Desy Pasapan</strong><small>Language Teacher</small></span>
             </div>
-          </article>
+            </article>
+          </div>
+          <div class="pain-points-controls" aria-label="Pain points carousel controls">
+            <button type="button" data-pain-direction="-1" aria-label="Previous pain point">←</button>
+            <button type="button" data-pain-direction="1" aria-label="Next pain point">→</button>
+          </div>
         </div>
       </section>
 
@@ -239,6 +246,32 @@
         </div>
       </section>
 
+      <section class="portfolio-carousel-section" aria-labelledby="portfolio-carousel-title">
+        <p class="eyebrow">More Projects</p>
+        <h2 id="portfolio-carousel-title">Explore My Portfolio</h2>
+        <div class="portfolio-carousel">
+          <div class="portfolio-carousel-track">
+            <a class="portfolio-carousel-card" href="genpro.html">
+              <img src="Assets/coverGenpro.png" alt="GenproApps case study" />
+              <span><strong>GenproApps : Aplikasi Pencegahan Stunting</strong><small>Design Thinking</small><p>Genpro Apps is an innovative app for stunting prevention in Indonesia, equipped with comprehensive sanitation and anthropometry features to monitor children's growth and development.</p>
+          </span>
+            </a>
+            <a class="portfolio-carousel-card" href="bakso.html">
+              <img src="Assets/coverBakso.jpg" alt="Bakso Kuning case study" />
+              <span><strong>Bakso Kuning & Mi Ayam Rendang Pak Eko</strong><small>User-Centered Design</small><p>The official website of Warung Bakso Kuning & Mi Ayam Rendang Pak Eko. Discover the authentic and unique flavors of our special menu, and order conveniently from the comfort of your home.</p></span>
+            </a>
+            <a class="portfolio-carousel-card" href="portofolio.html">
+              <img src="Assets/coverPortoDewi.jpg" alt="Personal portfolio case study" />
+              <span><strong>Website Personal Portofolio</strong><small>User-Centered Design</small><p>Designed a highly personalized digital portfolio to highlight the client's unique skills and projects. The UI/UX focuses on visual hierarchy, minimalist aesthetics, and smooth user flows to leave a lasting professional impression on recruiters.</p></span>
+            </a>
+          </div>
+          <div class="portfolio-carousel-controls" aria-label="Portfolio carousel controls">
+            <button type="button" data-portfolio-direction="-1" aria-label="Previous project">←</button>
+            <button type="button" data-portfolio-direction="1" aria-label="Next project">→</button>
+          </div>
+        </div>
+      </section>
+
       <section class="cta-section" id="contact" aria-label="Contact">
         <div class="cta-shape cta-shape--left"></div>
         <div class="cta-shape cta-shape--right"></div>
@@ -276,6 +309,48 @@
     </footer>
 
     <script>
+      const portfolioCarousel = document.querySelector(".portfolio-carousel");
+      const portfolioTrack = portfolioCarousel.querySelector(".portfolio-carousel-track");
+      let portfolioAnimating = false;
+      let portfolioManualRequest = false;
+      portfolioCarousel.addEventListener("wheel", (event) => {
+        event.preventDefault();
+      }, { passive: false });
+      const advancePortfolio = () => {
+        if (portfolioAnimating) return;
+        portfolioAnimating = true;
+        portfolioManualRequest = true;
+        const cardWidth = portfolioTrack.firstElementChild.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(portfolioTrack).gap);
+        portfolioTrack.style.transform = `translateX(-${cardWidth + gap}px)`;
+      };
+      portfolioTrack.addEventListener("transitionend", (event) => {
+        if (event.propertyName !== "transform" || !portfolioManualRequest) return;
+        portfolioTrack.style.transition = "none";
+        portfolioTrack.append(portfolioTrack.firstElementChild);
+        portfolioTrack.style.transform = "translateX(0)";
+        portfolioTrack.offsetHeight;
+        requestAnimationFrame(() => {
+          portfolioTrack.style.transition = "";
+          portfolioAnimating = false;
+          portfolioManualRequest = false;
+        });
+      });
+      portfolioCarousel.querySelectorAll("[data-portfolio-direction]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (portfolioAnimating) return;
+          if (Number(button.dataset.portfolioDirection) > 0) {
+            advancePortfolio();
+            return;
+          }
+          portfolioTrack.insertBefore(portfolioTrack.lastElementChild, portfolioTrack.firstElementChild);
+          portfolioManualRequest = false;
+          portfolioTrack.style.transition = "none";
+          portfolioTrack.style.transform = "translateX(-0px)";
+          requestAnimationFrame(() => { portfolioTrack.style.transition = ""; });
+        });
+      });
+
       const toggle = document.querySelector(".nav-toggle");
       const links = document.querySelector(".nav-links");
       toggle.addEventListener("click", () => {
@@ -286,25 +361,16 @@
       const painPointsSlider = document.querySelector(".pain-points-slider");
       const painPointCards = [...painPointsSlider.querySelectorAll(".pain-point-card")];
       let painPointIndex = 0;
-      let painPointTimer;
 
-      const movePainPoints = () => {
-        painPointIndex = (painPointIndex + 1) % painPointCards.length;
-        const target = painPointCards[painPointIndex].offsetLeft;
+      const movePainPoints = (direction) => {
+        painPointIndex = (painPointIndex + direction + painPointCards.length) % painPointCards.length;
+        const target = painPointCards[painPointIndex].offsetLeft - painPointsSlider.offsetLeft;
         painPointsSlider.scrollTo({ left: target, behavior: "smooth" });
       };
 
-      const startPainPointsAutoplay = () => {
-        window.clearInterval(painPointTimer);
-        painPointTimer = window.setInterval(movePainPoints, 5000);
-      };
-
-      painPointsSlider.addEventListener("touchstart", () => {
-        window.clearInterval(painPointTimer);
-      }, { passive: true });
-      painPointsSlider.addEventListener("touchend", startPainPointsAutoplay, { passive: true });
-      window.addEventListener("resize", startPainPointsAutoplay);
-      startPainPointsAutoplay();
+      document.querySelectorAll("[data-pain-direction]").forEach((button) => {
+        button.addEventListener("click", () => movePainPoints(Number(button.dataset.painDirection)));
+      });
     </script>
   </body>
 </html>
