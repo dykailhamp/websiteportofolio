@@ -1422,11 +1422,11 @@ h2 {
 }
 
 .bakso-requirements-copy {
-  width: 50%;
+  width: 100%;
 }
 
 .bakso-requirements-intro {
-  max-width: 860px;
+  max-width: 850px;
   margin: 20px 0 28px;
 }
 
@@ -1443,8 +1443,8 @@ h2 {
 }
 
 .bakso-requirement-card {
-  width: calc((100% - 20px) / 2);
-  flex: 0 0 calc((100% - 20px) / 2);
+  width: calc((100% - 40px) / 3);
+  flex: 0 0 calc((100% - 40px) / 3);
   min-height: 260px;
   display: grid;
   grid-template-columns: 42% 1fr;
@@ -1498,6 +1498,22 @@ h2 {
   width: 100%;
   max-height: 470px;
   object-fit: contain;
+}
+
+.bakso-feature-section--solution,
+.bakso-feature-section--evaluation {
+  gap: 70px;
+}
+
+.bakso-feature-section--solution > img,
+.bakso-feature-section--evaluation > img {
+  height: 470px;
+  border-radius: 30px;
+}
+
+.bakso-feature-section--solution > div,
+.bakso-feature-section--evaluation > div {
+  min-width: 0;
 }
 
 .bakso-feature-section h2,
@@ -2651,6 +2667,21 @@ h2 {
 
   .bakso-feature-section img {
     max-height: 300px;
+  }
+
+  .bakso-feature-section--solution,
+  .bakso-feature-section--evaluation {
+    gap: 28px;
+  }
+
+  .bakso-feature-section--solution > img,
+  .bakso-feature-section--evaluation > img {
+    height: 300px;
+    border-radius: 18px;
+  }
+
+  .bakso-feature-section--evaluation > div {
+    order: 0;
   }
 
   .bakso-visual-section img {
